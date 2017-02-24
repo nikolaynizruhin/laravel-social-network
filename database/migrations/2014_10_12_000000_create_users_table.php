@@ -21,7 +21,6 @@ class CreateUsersTable extends Migration
             $table->date('birthday');
             $table->string('location');
             $table->string('website');
-            $table->date('registration');
             $table->string('avatar')->default('default.jpg');
             $table->string('password');
             $table->rememberToken();
