@@ -1,6 +1,14 @@
 <div class="panel panel-default">
     <div class="panel-body">
         <img src="/uploads/avatars/{{ $user->avatar }}" class="img-responsive" alt="Responsive image">
+        @if(Auth::user() == $user)
+            <form enctype="multipart/form-data" action="/profile" method="POST">
+                {{ csrf_field() }}
+                <label>Update Profile Image</label>
+                <input type="file" name="avatar">
+                <input type="submit" value="Update" class="pull-right btn btn-xs btn-primary">
+            </form>
+        @endif
         <br>
         <p>{{ $user->name }}</p>
         <p><a href="/{{ $user->username }}">{{ '@' . $user->username }}</a></p>

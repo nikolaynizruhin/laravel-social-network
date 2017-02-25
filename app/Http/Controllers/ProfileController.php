@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
+use Image;
 
 class ProfileController extends Controller
 {
@@ -26,5 +28,27 @@ class ProfileController extends Controller
     public function show(User $user)
     {
         return view('profile')->with('user', $user);
+    }
+
+
+    /**
+     * Update profile avatar.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function updateAvatar(Request $request)
+    {
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->avatar;
+            $filename = time() . '.' . $avatar->extension();
+            Image::make($avatar)->resize(250, 250)->save(public_path('/uploads/avatars/' . $filename));
+
+            $user = Auth::user();
+            $user->avatar = $filename;
+            $user->save();
+        }
+
+        return view('profile')->with('user', Auth::user());
     }
 }
