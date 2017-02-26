@@ -26,4 +26,16 @@ class PostController extends Controller
 
         return back();
     }
+
+    /**
+     * Remove the specified post from storage.
+     *
+     * @param  Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Post $post)
+    {
+        $post->delete();
+        return back();
+    }
 }

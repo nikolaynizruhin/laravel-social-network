@@ -43,6 +43,16 @@
                         <small>
                             &bull; {{ $post->created_at->diffForHumans() }}
                         </small>
+                        <a href="{{ url('posts/' . $post->id) }}"
+                           onclick="event.preventDefault();
+                                    document.getElementById('delete-post-form').submit();">
+                            <i class="pull-right fa fa-trash" aria-hidden="true"></i>
+                        </a>
+
+                        <form id="delete-post-form" action="{{ url('posts/' . $post->id) }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                        </form>
                     </h4>
                     {{ $post->body }}
                 </div>

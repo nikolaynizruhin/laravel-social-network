@@ -20,3 +20,5 @@ Route::get('/{user}', 'ProfileController@show');
 Route::post('/profile', 'ProfileController@updateAvatar');
 
 Route::post('/posts', 'PostController@store');
+
+Route::delete('/posts/{post}', 'PostController@destroy');
