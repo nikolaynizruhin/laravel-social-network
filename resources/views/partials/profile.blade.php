@@ -6,7 +6,7 @@
                 {{ csrf_field() }}
                 <label>Update Profile Image</label>
                 <input type="file" name="avatar">
-                <input type="submit" value="Update" class="pull-right btn btn-xs btn-primary">
+                <input type="submit" value="Update" class="pull-right btn btn-xs btn-default">
             </form>
         @endif
         <br>

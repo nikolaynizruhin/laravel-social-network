@@ -18,3 +18,5 @@ Route::get('/', 'HomeController@index');
 Route::get('/{user}', 'ProfileController@show');
 
 Route::post('/profile', 'ProfileController@updateAvatar');
+
+Route::post('/posts', 'PostController@store');
