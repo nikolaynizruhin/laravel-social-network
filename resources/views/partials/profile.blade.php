@@ -8,6 +8,20 @@
                 <input type="file" name="avatar">
                 <input type="submit" value="Update" class="pull-right btn btn-xs btn-default">
             </form>
+        @else
+            <br>
+            @if(!$user->followers->contains(Auth::user()))
+                <form method="post" action="{{ url('follows/' . $user->username) }}">
+                    {{ csrf_field() }}
+                    <button type="submit" class="btn btn-primary btn-block">Follow</button>
+                </form>
+            @else
+                <form method="post" action="{{ url('follows/' . $user->username) }}">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <button type="submit" class="btn btn-default btn-block">Unfollow</button>
+                </form>
+            @endif
         @endif
         <br>
         <p>{{ $user->name }}</p>
