@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-    @if(Auth::user()->id == $user->id)
+    @if(Auth::id() == $user->id)
         <div class="panel-heading">
             <div class="media">
                 <div class="media-left">
