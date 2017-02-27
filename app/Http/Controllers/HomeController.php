@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -17,12 +19,18 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show user news feed.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('home');
+        $followees = Auth::user()->followees()->pluck('id')->all();
+
+        array_push($followees, Auth::user()->id);
+
+        $posts = Post::whereIn('user_id', $followees)->latest()->get();
+
+        return view('home', ['user' => Auth::user(), 'posts' => $posts]);
     }
 }

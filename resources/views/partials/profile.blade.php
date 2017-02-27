@@ -29,7 +29,7 @@
             <a type="button" class="btn btn-default">Followees<br>{{ $user->followees->count() }}</a>
             <a type="button" class="btn btn-default">Followers<br>{{ $user->followers->count() }}</a>
         </div>
-        <p>{{ $user->name }}</p>
+        <p><strong>{{ $user->name }}</strong></p>
         <p><a href="/{{ $user->username }}">{{ '@' . $user->username }}</a></p>
         <p><i class="fa fa-link" aria-hidden="true"></i> <a href="{{ $user->website }}">Website</a></p>
         <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ $user->location }}</p>
