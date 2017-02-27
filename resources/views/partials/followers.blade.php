@@ -4,7 +4,7 @@
             <div class="media">
                 <div class="media-left">
                     <a href="{{ url($follower->username) }}">
-                        <img class="media-object" src="uploads/avatars/{{ $follower->avatar }}" alt="avatar" style="width: 64px; height: 64px;">
+                        <img class="media-object" src="../uploads/avatars/{{ $follower->avatar }}" alt="avatar" style="width: 64px; height: 64px;">
                     </a>
                 </div>
                 <div class="media-body">

@@ -25,8 +25,8 @@ Route::post('/follows/{user}', 'FollowController@follow');
 
 Route::delete('/follows/{user}', 'FollowController@unfollow');
 
-Route::get('/followers', 'FollowController@followers');
+Route::get('/{user}/followers', 'FollowController@followers');
 
-Route::get('/followees', 'FollowController@followees');
+Route::get('/{user}/followees', 'FollowController@followees');
 
 Route::get('/{user}', 'ProfileController@show');
