@@ -29,4 +29,6 @@ Route::get('/{user}/followers', 'FollowController@followers');
 
 Route::get('/{user}/followees', 'FollowController@followees');
 
+Route::get('/posts/{post}/like', 'LikeController@likePost');
+
 Route::get('/{user}', 'ProfileController@show');

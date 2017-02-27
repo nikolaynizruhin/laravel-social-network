@@ -60,6 +60,7 @@
                         @endif
                     </h4>
                     {{ $post->body }}
+                    @include('partials.like')
                 </div>
             </div>
             @if($user->posts()->latest()->get()->last() != $post)

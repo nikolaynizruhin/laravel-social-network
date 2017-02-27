@@ -20,6 +20,7 @@
                         </small>
                     </h4>
                     {{ $post->body }}
+                    @include('partials.like')
                 </div>
             </div>
             @if($posts->last() != $post)

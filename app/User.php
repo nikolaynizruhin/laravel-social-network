@@ -15,7 +15,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email', 'birthday', 'location', 'website', 'password',
+        'name',
+        'username',
+        'email',
+        'birthday',
+        'location',
+        'website',
+        'password',
     ];
 
     /**
@@ -75,5 +81,15 @@ class User extends Authenticatable
             'follower_id',
             'followee_id'
         )->withTimestamps();
+    }
+
+    /**
+     * Get the liked posts.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+     */
+    public function likedPosts()
+    {
+        return $this->morphedByMany('App\Post', 'likeable');
     }
 }
