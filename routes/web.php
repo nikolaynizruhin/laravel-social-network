@@ -15,8 +15,6 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/{user}', 'ProfileController@show');
-
 Route::post('/profile', 'ProfileController@updateAvatar');
 
 Route::post('/posts', 'PostController@store');
@@ -26,3 +24,9 @@ Route::delete('/posts/{post}', 'PostController@destroy');
 Route::post('/follows/{user}', 'FollowController@follow');
 
 Route::delete('/follows/{user}', 'FollowController@unfollow');
+
+Route::get('/followers', 'FollowController@followers');
+
+Route::get('/followees', 'FollowController@followees');
+
+Route::get('/{user}', 'ProfileController@show');

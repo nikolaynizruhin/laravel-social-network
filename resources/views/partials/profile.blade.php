@@ -26,8 +26,8 @@
         <br>
         <div class="btn-group btn-group-justified btn-group-sm" role="group" aria-label="...">
             <a type="button" class="btn btn-default" href="{{ url($user->username) }}">Posts<br>{{ $user->posts->count() }}</a>
-            <a type="button" class="btn btn-default">Followees<br>{{ $user->followees->count() }}</a>
-            <a type="button" class="btn btn-default">Followers<br>{{ $user->followers->count() }}</a>
+            <a type="button" class="btn btn-default" href="/followees">Followees<br>{{ $user->followees->count() }}</a>
+            <a type="button" class="btn btn-default" href="/followers">Followers<br>{{ $user->followers->count() }}</a>
         </div>
         <p><strong>{{ $user->name }}</strong></p>
         <p><a href="/{{ $user->username }}">{{ '@' . $user->username }}</a></p>

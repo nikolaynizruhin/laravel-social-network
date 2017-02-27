@@ -43,4 +43,24 @@ class FollowController extends Controller
 
         return back();
     }
+
+    /**
+     * Show list of followers.
+     *
+     * @return $this
+     */
+    public function followers()
+    {
+        return view('followers')->with('user', Auth::user());
+    }
+
+    /**
+     * Show list of followees.
+     *
+     * @return $this
+     */
+    public function followees()
+    {
+        return view('followees')->with('user', Auth::user());
+    }
 }
