@@ -10,20 +10,25 @@
             </form>
         @else
             <br>
-            @if(!$user->followers->contains(Auth::user()))
-                <form method="post" action="{{ url('follows/' . $user->username) }}">
-                    {{ csrf_field() }}
-                    <button type="submit" class="btn btn-primary btn-block">Follow</button>
-                </form>
-            @else
+            @if($user->followers->contains(Auth::user()))
                 <form method="post" action="{{ url('follows/' . $user->username) }}">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                     <button type="submit" class="btn btn-default btn-block">Unfollow</button>
                 </form>
+            @else
+                <form method="post" action="{{ url('follows/' . $user->username) }}">
+                    {{ csrf_field() }}
+                    <button type="submit" class="btn btn-primary btn-block">Follow</button>
+                </form>
             @endif
         @endif
         <br>
+        <div class="btn-group btn-group-justified btn-group-sm" role="group" aria-label="...">
+            <a type="button" class="btn btn-default" href="{{ url($user->username) }}">Posts<br>{{ $user->posts->count() }}</a>
+            <a type="button" class="btn btn-default">Followees<br>{{ $user->followees->count() }}</a>
+            <a type="button" class="btn btn-default">Followers<br>{{ $user->followers->count() }}</a>
+        </div>
         <p>{{ $user->name }}</p>
         <p><a href="/{{ $user->username }}">{{ '@' . $user->username }}</a></p>
         <p><i class="fa fa-link" aria-hidden="true"></i> <a href="{{ $user->website }}">Website</a></p>

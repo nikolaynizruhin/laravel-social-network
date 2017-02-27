@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-    @if(Auth::user() == $user)
+    @if(Auth::user()->id == $user->id)
         <div class="panel-heading">
             <div class="media">
                 <div class="media-left">
@@ -46,7 +46,7 @@
                             &bull; {{ $post->created_at->diffForHumans() }}
                         </small>
 
-                        @if(Auth::user() == $user)
+                        @if(Auth::user()->id == $user->id)
                             <a href="{{ url('posts/' . $post->id) }}"
                                onclick="event.preventDefault();
                                         document.getElementById('delete-post-form').submit();">
