@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,7 +53,9 @@ class FollowController extends Controller
      */
     public function followers(User $user)
     {
-        return view('followers')->with('user', $user);
+        $tags = Tag::latest()->limit(5)->get();
+
+        return view('followers')->with(['user' => $user, 'tags' => $tags]);
     }
 
     /**
@@ -63,6 +66,8 @@ class FollowController extends Controller
      */
     public function followees(User $user)
     {
-        return view('followees')->with('user', $user);
+        $tags = Tag::latest()->limit(5)->get();
+
+        return view('followees')->with(['user' => $user, 'tags' => $tags]);
     }
 }
