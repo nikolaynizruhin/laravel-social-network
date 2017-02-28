@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PostReply;
 use App\Post;
 use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
 {
@@ -72,7 +75,10 @@ class PostController extends Controller
             foreach ($usernames[1] as $username) {
                 if (!User::whereUsername($username)->get()->isEmpty()) {
                     $postBody = preg_replace("/(@\\w+)/", '<a href="/' . $username . '">${1}</a>', $postBody);
-                    // notify
+                    // Notify
+                    $recipient = User::whereUsername($username)->first();
+                    $sender = Auth::user();
+                    Mail::to($recipient)->send(new PostReply($recipient, $sender));
                 }
             }
         }
