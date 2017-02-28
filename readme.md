@@ -6,3 +6,4 @@
 - Likes
 - Follows
 - Feed
+- Tags
