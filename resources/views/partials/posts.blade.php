@@ -59,7 +59,7 @@
                             </form>
                         @endif
                     </h4>
-                    {{ $post->body }}
+                    {!! $post->body !!}
                     @include('partials.like')
                 </div>
             </div>

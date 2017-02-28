@@ -19,7 +19,7 @@
                             &bull; {{ $post->created_at->diffForHumans() }}
                         </small>
                     </h4>
-                    {{ $post->body }}
+                    {!! $post->body !!}
                     @include('partials.like')
                 </div>
             </div>
