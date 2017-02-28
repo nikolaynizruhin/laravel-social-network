@@ -7,3 +7,4 @@
 - Follows
 - Feed
 - Tags
+- Mail notify
