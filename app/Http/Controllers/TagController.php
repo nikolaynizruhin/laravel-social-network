@@ -25,6 +25,8 @@ class TagController extends Controller
      */
     public function show(Tag $tag)
     {
-        return view('home')->with(['posts' => $tag->posts, 'user' => auth()->user()]);
+        $tags = Tag::latest()->limit(5)->get();
+
+        return view('home')->with(['posts' => $tag->posts, 'user' => auth()->user(), 'tags' => $tags]);
     }
 }

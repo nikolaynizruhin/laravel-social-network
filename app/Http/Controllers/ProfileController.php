@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Tag;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
@@ -27,7 +28,9 @@ class ProfileController extends Controller
      */
     public function show(User $user)
     {
-        return view('profile')->with('user', $user);
+        $tags = Tag::latest()->limit(5)->get();
+
+        return view('profile')->with(['user' => $user, 'tags' => $tags]);
     }
 
 
