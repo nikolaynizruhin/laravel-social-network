@@ -47,4 +47,14 @@ class Post extends Model
 
         return isset($like) ? true : false;
     }
+
+    /**
+     * The tags that belong to post.
+     *
+     * @return BelongsToMany
+     */
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tag')->withTimestamps();
+    }
 }
