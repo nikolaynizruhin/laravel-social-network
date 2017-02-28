@@ -31,4 +31,6 @@ Route::get('/{user}/followees', 'FollowController@followees');
 
 Route::get('/posts/{post}/like', 'LikeController@likePost');
 
+Route::get('/tags/{tag}', 'TagController@show');
+
 Route::get('/{user}', 'ProfileController@show');

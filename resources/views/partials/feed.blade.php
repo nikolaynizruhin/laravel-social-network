@@ -4,7 +4,7 @@
             <div class="media">
                 <div class="media-left">
                     <a href="{{ url($post->user->username) }}">
-                        <img class="media-object" src="uploads/avatars/{{ $post->user->avatar }}" alt="avatar" style="width: 64px; height: 64px;">
+                        <img class="media-object" src="{{ Request::is('tags/*') ? '../' : '' }}uploads/avatars/{{ $post->user->avatar }}" alt="avatar" style="width: 64px; height: 64px;">
                     </a>
                 </div>
                 <div class="media-body">
