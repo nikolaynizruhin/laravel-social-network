@@ -8,3 +8,4 @@
 - Feed
 - Tags
 - Mail notify
+- Infinite scroll

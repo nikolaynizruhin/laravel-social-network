@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-    <div class="panel-body">
+    <div class="panel-body infinite-scroll">
         @foreach($posts as $post)
             <div class="media">
                 <div class="media-left">
@@ -27,5 +27,6 @@
                 <hr>
             @endif
         @endforeach
+        {{ $posts->links() }}
     </div>
 </div>

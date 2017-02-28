@@ -30,7 +30,7 @@ class HomeController extends Controller
 
         array_push($followees, Auth::user()->id);
 
-        $posts = Post::whereIn('user_id', $followees)->latest()->get();
+        $posts = Post::whereIn('user_id', $followees)->latest()->paginate(10);
 
         $tags = Tag::latest()->limit(5)->get();
 
