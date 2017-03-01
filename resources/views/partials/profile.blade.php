@@ -8,6 +8,12 @@
                 <input type="file" name="avatar">
                 <input type="submit" value="Update" class="pull-right btn btn-xs btn-default">
             </form>
+            <br>
+            <br>
+            <div class="btn-group btn-group-justified btn-group-sm" role="group" aria-label="...">
+                <a role="button" class="btn btn-default" href="/inbox">Inbox</a>
+                <a role="button" class="btn btn-default" href="/outbox">Outbox</a>
+            </div>
         @else
             <br>
             @if($user->followers->contains(Auth::user()))

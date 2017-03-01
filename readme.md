@@ -9,3 +9,4 @@
 - Tags
 - Mail notify
 - Infinite scroll
+- Messages

@@ -33,4 +33,8 @@ Route::get('/posts/{post}/like', 'LikeController@likePost');
 
 Route::get('/tags/{tag}', 'TagController@show');
 
+Route::get('/inbox', 'MessageController@inbox');
+
+Route::get('/outbox', 'MessageController@outbox');
+
 Route::get('/{user}', 'ProfileController@show');

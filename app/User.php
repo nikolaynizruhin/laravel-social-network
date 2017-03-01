@@ -92,4 +92,24 @@ class User extends Authenticatable
     {
         return $this->morphedByMany('App\Post', 'likeable');
     }
+
+    /**
+     * Outbox of the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function outbox()
+    {
+        return $this->hasMany('App\Message', 'from_user_id', 'id');
+    }
+
+    /**
+     * Inbox of the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function inbox()
+    {
+        return $this->hasMany('App\Message', 'to_user_id', 'id');
+    }
 }
