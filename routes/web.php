@@ -37,4 +37,6 @@ Route::get('/inbox', 'MessageController@inbox');
 
 Route::get('/outbox', 'MessageController@outbox');
 
+Route::post('/messages', 'MessageController@store');
+
 Route::get('/{user}', 'ProfileController@show');
