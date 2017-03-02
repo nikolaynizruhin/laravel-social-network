@@ -13,8 +13,8 @@
                     {{ csrf_field() }}
                     <div class="form-group {{ $errors->has('to') ? ' has-error' : '' }}">
                         <select name="to" class="form-control">
-                            @foreach($users as $user)
-                                <option value="{{ $user->id }}">{{ $user->username }}</option>
+                            @foreach($recipients as $recipient)
+                                <option value="{{ $recipient->id }}">{{ $recipient->username }}</option>
                             @endforeach
                         </select>
 

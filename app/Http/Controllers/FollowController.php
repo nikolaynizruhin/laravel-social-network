@@ -55,7 +55,10 @@ class FollowController extends Controller
     {
         $tags = Tag::latest()->limit(5)->get();
 
-        return view('followers')->with(['user' => $user, 'tags' => $tags]);
+        return view('followers')->with([
+            'user' => $user,
+            'tags' => $tags
+        ]);
     }
 
     /**
@@ -68,6 +71,9 @@ class FollowController extends Controller
     {
         $tags = Tag::latest()->limit(5)->get();
 
-        return view('followees')->with(['user' => $user, 'tags' => $tags]);
+        return view('followees')->with([
+            'user' => $user,
+            'tags' => $tags
+        ]);
     }
 }

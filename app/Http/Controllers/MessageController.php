@@ -53,11 +53,16 @@ class MessageController extends Controller
 
         $user = Auth::user();
 
-        $users = User::where('id', '!=', Auth::id())->get();
+        $recipients = User::where('id', '!=', Auth::id())->get();
 
         $tags = Tag::latest()->limit(5)->get();
 
-        return view('messages')->with(['messages' => $messages, 'user' => $user, 'tags' => $tags, 'users' => $users]);
+        return view('messages')->with([
+            'messages' => $messages,
+            'user' => $user,
+            'tags' => $tags,
+            'recipients' => $recipients
+        ]);
     }
 
     /**
@@ -71,10 +76,15 @@ class MessageController extends Controller
 
         $user = Auth::user();
 
-        $users = User::where('id', '!=', Auth::id())->get();
+        $recipients = User::where('id', '!=', Auth::id())->get();
 
         $tags = Tag::latest()->limit(5)->get();
 
-        return view('messages')->with(['messages' => $messages, 'user' => $user, 'tags' => $tags, 'users' => $users]);
+        return view('messages')->with([
+            'messages' => $messages,
+            'user' => $user,
+            'tags' => $tags,
+            'recipients' => $recipients
+        ]);
     }
 }
