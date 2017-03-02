@@ -27,8 +27,10 @@ class TagController extends Controller
     {
         $tags = Tag::latest()->limit(5)->get();
 
+        $posts = $tag->posts()->paginate(10);
+
         return view('home')->with([
-            'posts' => $tag->posts,
+            'posts' => $posts,
             'user' => auth()->user(),
             'tags' => $tags
         ]);
