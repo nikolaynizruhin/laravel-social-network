@@ -12,11 +12,11 @@ class LoginTest extends DuskTestCase
     use DatabaseMigrations;
 
     /**
-     * A Dusk test example.
+     * A User can login.
      *
      * @return void
      */
-    public function testExample()
+    public function testUserCanLogin()
     {
         $user = factory(User::class)->create();
 
