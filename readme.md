@@ -10,3 +10,4 @@
 - Mail notify
 - Infinite scroll
 - Messages
+- Tests
