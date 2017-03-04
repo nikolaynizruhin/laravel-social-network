@@ -23,7 +23,7 @@ class AvatarUploadTest extends TestCase
     {
         $user = factory(User::class)->create();
 
-        $response = $this->actingAs($user)->json('POST', '/profile', [
+        $this->actingAs($user)->json('POST', '/profile', [
             'avatar' => UploadedFile::fake()->image('avatar.jpg')
         ]);
 
