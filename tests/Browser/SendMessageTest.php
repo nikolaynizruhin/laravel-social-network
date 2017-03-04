@@ -14,7 +14,7 @@ class SendMessageTest extends DuskTestCase
      *
      * @return void
      */
-    public function testExample()
+    public function testSendMessage()
     {
         $user = factory(User::class)->create();
         $secondUser = factory(User::class)->create();
