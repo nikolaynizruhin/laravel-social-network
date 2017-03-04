@@ -10,7 +10,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 class SendMessageTest extends DuskTestCase
 {
     /**
-     * A Dusk test example.
+     * A User can send message.
      *
      * @return void
      */

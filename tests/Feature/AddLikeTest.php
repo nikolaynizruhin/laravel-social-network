@@ -10,7 +10,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class AddLikeTest extends TestCase
 {
     /**
-     * A basic test example.
+     * A User can like post.
      *
      * @return void
      */

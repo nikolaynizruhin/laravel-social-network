@@ -10,7 +10,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 class RegisterTest extends DuskTestCase
 {
     /**
-     * A Dusk test example.
+     * A User can register.
      *
      * @return void
      */

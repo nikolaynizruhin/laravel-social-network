@@ -10,7 +10,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 class PostCreateTest extends DuskTestCase
 {
     /**
-     * A Dusk test example.
+     * A User can create post.
      *
      * @return void
      */

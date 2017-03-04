@@ -15,7 +15,7 @@ class AvatarUploadTest extends TestCase
     use WithoutMiddleware;
 
     /**
-     * A basic test example.
+     * A user can upload avatar.
      *
      * @return void
      */

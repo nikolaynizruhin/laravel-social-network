@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 class AddFolloweeTest extends DuskTestCase
 {
     /**
-     * A Dusk test example.
+     * User can followee another user.
      *
      * @return void
      */
